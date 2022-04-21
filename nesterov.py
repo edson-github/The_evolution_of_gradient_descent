@@ -12,11 +12,7 @@ def nesterov_descent(func, L, dimension, init_x=None, numerical_gradient=True, d
     
     assert delta_x > 0, "Step must be positive."
 
-    if (init_x is None):
-        x = np.zeros(dimension)  # todo проверка что функция определена в 0.
-    else:
-        x = init_x
-
+    x = np.zeros(dimension) if (init_x is None) else init_x
     if (epsilon is None):
         epsilon = 0.05
 
